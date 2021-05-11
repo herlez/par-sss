@@ -32,7 +32,7 @@ class SSSBenchmark {
     tlx::Aggregate<size_t> mem_construction;
     tlx::Aggregate<size_t> sss_size;
     for (uint64_t i = 0; i < runs; ++i) {
-      if (num_threads == 1) {
+      if (num_threads > 1) {
         sss::benchutil::spacer spacer;
         sss::benchutil::timer timer;
         auto sss = sss::string_syncronizing_set(text, num_threads);
